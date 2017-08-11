@@ -1,0 +1,60 @@
+{
+  "name": "docredux",
+  "homepage": "https://aritysoftware.com",
+  "company": "Arity",
+  "version": "1.0.5",
+  "description": "Dead simple documentation generator using JSDOC syntax.",
+  "main": "index.js",
+  "readme": "README.md",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "keywords": [
+    "Acid",
+    "utility",
+    "Lucy",
+    "CWA",
+    "Arity",
+    "documentation"
+  ],
+  "dependencies": {
+    "comment-parser": "^0.3.2",
+    "Lucy": "^2.0.61",
+    "babel-core": "*",
+    "babel-eslint": "*",
+    "babel-plugin-minify-empty-function": "*",
+    "babel-preset-babili": "^1.0.0",
+    "babel-preset-es2015": "*",
+    "esformatter": "*",
+    "eslint": "^4.4.1",
+    "eslint-plugin-jsdoc": "*",
+    "node-watch": "*",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babili": "*"
+  },
+  "maintainers": [
+    {
+      "email": "tommarchi@protonmail.com",
+      "name": "Tom Marchi"
+    },
+    {
+      "email": "erickdelgado@protonmail.com",
+      "name": "Erick Delgado"
+    }
+  ],
+  "author": [
+    {
+      "email": "tommarchi@protonmail.com",
+      "name": "Tom Marchi"
+    },
+    {
+      "email": "erickdelgado@protonmail.com",
+      "name": "Erick Delgado"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArityLLCNJ/docredux.git"
+  },
+  "license": "ISC"
+}
