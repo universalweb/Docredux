@@ -18,19 +18,27 @@
     "documentation"
   ],
   "dependencies": {
-    "comment-parser": "^0.3.2",
-    "Lucy": "^2.0.61",
+    "Acid": "^2.0.62",
+    "Lucy": "*",
     "babel-core": "*",
     "babel-eslint": "*",
     "babel-plugin-minify-empty-function": "*",
     "babel-preset-babili": "^1.0.0",
     "babel-preset-es2015": "*",
+    "comment-parser": "^0.3.2",
     "esformatter": "*",
     "eslint": "^4.4.1",
     "eslint-plugin-jsdoc": "*",
-    "node-watch": "*",
+    "nbome25": "^1.0.4",
     "rollup": "^0.45.2",
     "rollup-plugin-babili": "*"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.2",
+    "connect-livereload": "^0.6.0",
+    "express": "^4.15.4",
+    "node-watch": "^0.5.5",
+    "tiny-lr": "^1.0.5"
   },
   "maintainers": [
     {
