@@ -4,12 +4,12 @@ Dead simple unit testing.
 ~~~~
 (async () => {
   const lucy = require('Lucy');
-  const nbome25 = require('nbome25');
+  const testatron = require('testatron');
   const {
     keys
   } = lucy;
   console.log('Building Test Cases');
-  await nbome25({
+  await testatron({
     destination: `${__dirname}/tests`,
     filePath: './build/bundle.js',
     prefix: ` delete require.cache[require.resolve('Lucy')];
@@ -22,3 +22,5 @@ Dead simple unit testing.
 })();
 ~~~~
 Arity 2017
+https://aritysoftware.com
+https://sentivate.com

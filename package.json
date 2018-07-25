@@ -2,8 +2,8 @@
   "name": "docredux",
   "homepage": "https://aritysoftware.com",
   "company": "Arity",
-  "version": "1.0.5",
-  "description": "Dead simple documentation generator using JSDOC syntax.",
+  "version": "1.0.6",
+  "description": "Dead simple documentation generator for JSDOC syntax.",
   "main": "index.js",
   "readme": "README.md",
   "scripts": {
@@ -15,30 +15,29 @@
     "Lucy",
     "CWA",
     "Arity",
-    "documentation"
+    "documentation",
+    "sentivate"
   ],
   "dependencies": {
-    "Acid": "^2.0.62",
-    "Lucy": "*",
-    "babel-core": "*",
-    "babel-eslint": "*",
+    "Acid": "^2.0.69",
+    "Lucy": "^2.0.7",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
     "babel-plugin-minify-empty-function": "*",
     "babel-preset-babili": "^1.0.0",
     "babel-preset-es2015": "*",
     "comment-parser": "^0.3.2",
     "esformatter": "*",
-    "eslint": "^4.4.1",
-    "eslint-plugin-jsdoc": "*",
-    "nbome25": "^1.0.4",
+    "eslint": "^5.2.0",
     "rollup": "^0.45.2",
     "rollup-plugin-babili": "*"
   },
   "devDependencies": {
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.18.3",
     "connect-livereload": "^0.6.0",
-    "express": "^4.15.4",
-    "node-watch": "^0.5.5",
-    "tiny-lr": "^1.0.5"
+    "express": "^4.16.3",
+    "node-watch": "^0.5.8",
+    "tiny-lr": "^1.1.1"
   },
   "maintainers": [
     {

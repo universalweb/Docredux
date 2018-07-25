@@ -15,22 +15,7 @@
       "allowImportExportEverywhere": true
     }
   },
-  "plugins": [
-    "jsdoc"
-  ],
   'rules': {
-    "jsdoc/check-param-names": 'off',
-    "jsdoc/check-tag-names": 0,
-    "jsdoc/check-types": 1,
-    "jsdoc/newline-after-description": 1,
-    "jsdoc/require-description-complete-sentence": 1,
-    "jsdoc/require-example": 0,
-    "jsdoc/require-hyphen-before-param-description": 1,
-    "jsdoc/require-param": 0,
-    "jsdoc/require-param-description": 1,
-    "jsdoc/require-param-type": 1,
-    "jsdoc/require-returns-description": 1,
-    "jsdoc/require-returns-type": 1,
     "object-curly-newline": ["error", { "minProperties": 1 }],
     object-property-newline: "error",
     no-return-await: 'error',
@@ -59,7 +44,6 @@
     'no-unexpected-multiline': 'error',
     'no-unreachable': 'error',
     'use-isnan': 'error',
-    'valid-jsdoc': 'off',
     'valid-typeof': 'error',
     'accessor-pairs': 'error',
     'array-callback-return': 'error',
@@ -191,7 +175,6 @@
     'operator-linebreak': ['error', 'after'],
     'padded-blocks': ['error', 'never'],
     'quote-props': 'off',
-    'require-jsdoc': 'off',
     'semi': ['error', 'always'],
     'semi-spacing': 'off',
     'sort-vars': 'error',
