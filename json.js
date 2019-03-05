@@ -5,7 +5,7 @@ const {
   eachObject,
   sortAlphabetical,
 } = lucy;
-const esformatter = require('esformatter');
+const format = require('prettier-eslint');
 const fs = require(`fs`);
 const extractComments = require('comment-parser');
 const cleanObject = require('./cleanObject');
@@ -74,10 +74,10 @@ const buildJson = async ({
         const splitCode = exampleCode.source.split('// =>');
         const codeResult = (splitCode[1]) ? `// =>${splitCode[1].replace(/\n/g, '')}` : '';
         try {
-          exampleCode.source = esformatter.format(splitCode[0], {
-            indent: {
-              value: '  '
-            }
+          const eslintConfig = JSON.parse(fs.readFileSync('./.eslintrc').toString());
+          exampleCode.source = format({
+            eslintConfig,
+            text: splitCode[0],
           }) + codeResult;
         } catch (error) {
           console.log(commentName, error);
