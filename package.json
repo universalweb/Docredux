@@ -2,7 +2,7 @@
 	"name": "docredux",
 	"company": "Universal Web",
 	"homepage": "https://universalweb.io",
-	"version": "2.1.0",
+	"version": "2.1.2",
 	"description": "Dead simple documentation generator for JSDOC syntax.",
 	"main": "index.js",
 	"readme": "README.md",
@@ -17,8 +17,8 @@
 		"Universal Web"
 	],
 	"dependencies": {
-		"Acid": "^2.2.5",
-		"Lucy": "^2.2.7",
+		"Acid": "^2.3.0",
+		"Lucy": "^2.3.0",
 		"comment-parser": "^0.7.6",
 		"prettier-eslint": "^9.0.2"
 	},
