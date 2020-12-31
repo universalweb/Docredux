@@ -1,45 +1,40 @@
 {
-  "name": "docredux",
-  "company": "Arity",
-  "homepage": "https://arity.company",
-  "version": "2.0.0",
-  "description": "Dead simple documentation generator for JSDOC syntax.",
-  "main": "index.js",
-  "readme": "README.md",
-  "scripts": {
-    "build": "node build.js"
-  },
-  "keywords": [
-    "Acid",
-    "utility",
-    "Lucy",
-    "CWA",
-    "Arity",
-    "documentation",
-    "sentivate"
-  ],
-  "dependencies": {
-    "Acid": "*",
-    "Lucy": "*",
-    "comment-parser": "*",
-    "prettier-eslint": "^8.8.2"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/helpers": "^7.3.1",
-    "@babel/preset-env": "*",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.15.1"
-  },
-  "author": [
-    {
-      "email": "tommarchi@protonmail.com",
-      "name": "Tom Marchi"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ArityOfficial/docredux.git"
-  },
-  "license": "ISC"
+	"name": "docredux",
+	"company": "Universal Web",
+	"homepage": "https://universalweb.io",
+	"version": "2.0.9",
+	"description": "Dead simple documentation generator for JSDOC syntax.",
+	"main": "index.js",
+	"readme": "README.md",
+	"scripts": {
+		"build": "node build.js"
+	},
+	"keywords": [
+		"docs",
+		"doc generation",
+		"utility",
+		"documentation",
+		"Universal Web"
+	],
+	"dependencies": {
+		"Acid": "^2.2.5",
+		"Lucy": "^2.2.6",
+		"comment-parser": "^0.7.6",
+		"prettier-eslint": "^9.0.2"
+	},
+	"devDependencies": {
+		"babel-eslint": "^10.1.0",
+		"eslint": "^6.8.0"
+	},
+	"author": [
+		{
+			"email": "tommarchi@protonmail.com",
+			"name": "Tom Marchi"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tomekmarchi/docredux.git"
+	},
+	"license": "ISC"
 }

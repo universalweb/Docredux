@@ -1,26 +1,15 @@
-# nbome25
-Dead simple unit testing.  
-### Example use
+# Docredux
+Dead simple documentation generator for JSDOC syntax. Docredux plucks out the JSDOC syntax inside of your compiled code and returns an organized JSON structure and saves it to a JSON file. The generated JSON Object is then used for creating an HTML documentation website for the code.  
+
+
+### Example  
+The destination is the location where the generated file will save.
+
 ~~~~
-(async () => {
-  const lucy = require('Lucy');
-  const testatron = require('testatron');
-  const {
-    keys
-  } = lucy;
-  console.log('Building Test Cases');
-  await testatron({
-    destination: `${__dirname}/tests`,
-    filePath: './build/bundle.js',
-    prefix: ` delete require.cache[require.resolve('Lucy')];
-    const $ = require('Lucy');
-    const {
-      ${keys(lucy).join(',')}
-    } = $;`,
-  });
-  console.log('END');
-})();
+const docredux = require('docredux');
+docredux.build.json({
+  destination: `${__dirname}/docs/`,
+  source: `${__dirname}/docs/bundle.js`,
+});
 ~~~~
-Arity 2017
-https://aritysoftware.com
-https://sentivate.com
+© copyright 2020 [Universal Web, Inc](https://universalweb.io)
