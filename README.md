@@ -12,4 +12,4 @@ docredux.build.json({
   source: `${__dirname}/docs/bundle.js`,
 });
 ~~~~
-© copyright 2020 [Universal Web, Inc](https://universalweb.io)
+© copyright 2021 [Universal Web, Inc](https://universalweb.io)
