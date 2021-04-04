@@ -18,23 +18,18 @@
 	],
 	"dependencies": {
 		"Acid": "^2.3.0",
-		"Lucy": "^2.3.0",
 		"comment-parser": "^0.7.6",
+		"eslint": "^6.8.0",
+		"Lucy": "^2.3.0",
 		"prettier-eslint": "^9.0.2"
 	},
-	"devDependencies": {
-		"babel-eslint": "^10.1.0",
-		"eslint": "^6.8.0"
+	"author": {
+		"email": "tom@universalweb.io",
+		"name": "Tom Marchi"
 	},
-	"author": [
-		{
-			"email": "tommarchi@protonmail.com",
-			"name": "Tom Marchi"
-		}
-	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/tomekmarchi/docredux.git"
+		"url": "git+https://github.com/universalweb/docredux.git"
 	},
 	"license": "ISC"
 }
