@@ -78,7 +78,9 @@ const buildJson = async ({
 					const eslintConfig = JSON.parse(fs.readFileSync('./.eslintrc').toString());
 					exampleCode.source = format({
 						eslintConfig,
-						parser: 'babel',
+						prettierOptions: {
+							parser: 'babel',
+						},
 						text: splitCode[0],
 					}) + codeResult;
 				} catch (error) {
