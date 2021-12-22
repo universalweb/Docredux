@@ -7,7 +7,9 @@ const {
 } = lucy;
 const format = require('prettier-eslint');
 const fs = require(`fs`);
-const extractComments = require('comment-parser');
+const {
+	parse
+} = require('comment-parser/lib');
 const cleanObject = require('./cleanObject');
 const regexComments = /(\/\*([\s\S]*?)\*\/)/gm;
 const readFile = (filePath) => {
@@ -32,7 +34,7 @@ const buildJson = async ({
 		if (item.includes('@ignore') || item.includes('@ignoreTest')) {
 			return;
 		}
-		const sourceSyntax = cleanObject(extractComments(item)[0]);
+		const sourceSyntax = cleanObject(parse(item)[0]);
 		const comment = sourceSyntax.tags;
 		const description = sourceSyntax.description;
 		if (!comment) {
