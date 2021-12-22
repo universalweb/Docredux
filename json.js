@@ -9,7 +9,7 @@ const format = require('prettier-eslint');
 const fs = require(`fs`);
 const {
 	parse
-} = require('comment-parser/lib');
+} = require('comment-parser');
 const cleanObject = require('./cleanObject');
 const regexComments = /(\/\*([\s\S]*?)\*\/)/gm;
 const readFile = (filePath) => {
@@ -74,20 +74,12 @@ const buildJson = async ({
 		comment.forEach((commentTag) => {
 			if (commentTag.tag === 'example') {
 				const exampleCode = cleanObject(commentTag, 'example');
-				const splitCode = exampleCode.source.split('// =>');
-				const codeResult = (splitCode[1]) ? `// =>${splitCode[1].replace(/\n/g, '')}` : '';
-				try {
-					const eslintConfig = JSON.parse(fs.readFileSync('./.eslintrc').toString());
-					exampleCode.source = format({
-						eslintConfig,
-						prettierOptions: {
-							parser: 'babel',
-						},
-						text: splitCode[0],
-					}) + codeResult;
-				} catch (error) {
-					console.log(commentName, error);
-				}
+				exampleCode.source = format({
+					prettierOptions: {
+						parser: 'babel',
+					},
+					text: exampleCode.description.replace('// =>', '\n// =>'),
+				});
 				sourceMap.items[commentName].examples.push(exampleCode);
 			}
 		});
