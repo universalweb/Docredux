@@ -31,7 +31,7 @@ const buildJson = async ({
 		items: {}
 	};
 	matches.forEach((item) => {
-		if (item.includes('@ignore') || item.includes('@ignoreTest')) {
+		if (item.includes('@ignore')) {
 			return;
 		}
 		const sourceSyntax = cleanObject(parse(item)[0]);
