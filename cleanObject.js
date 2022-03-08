@@ -22,12 +22,15 @@ module.exports = (cleanThisArg, cleanTag) => {
 				.trim();
 		}
 	}
-	return compactMapObject(omit(cleanThisArg, ['line']), (item) => {
-		if (hasValue(item) && !isEmpty(item)) {
-			if (isString(item)) {
-				return item.trim();
+	if (cleanThisArg) {
+		return compactMapObject(omit(cleanThisArg, ['line']), (item) => {
+			if (hasValue(item) && !isEmpty(item)) {
+				if (isString(item)) {
+					return item.trim();
+				}
+				return item;
 			}
-			return item;
-		}
-	});
+		});
+	}
+	return cleanThisArg;
 };
