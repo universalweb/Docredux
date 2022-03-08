@@ -1,7 +1,6 @@
 const lucy = require(`Lucy`);
 const {
 	findItem,
-	findIndex,
 	eachObject,
 	sortAlphabetical,
 } = lucy;
@@ -92,16 +91,14 @@ const buildJson = async ({
 	});
 	const categoriesSorted = [];
 	eachObject(sourceMap.categories, (catItem, categoryName) => {
-		categoriesSorted.push({
-			categoryName,
-			items: catItem.sort(),
-		});
+		if (categoryName) {
+			categoriesSorted.push({
+				categoryName,
+				items: catItem.sort(),
+			});
+		}
 	});
 	sourceMap.categories = sortAlphabetical(categoriesSorted, 'categoryName');
-	const mainIndex = findIndex(sourceMap.categories, 'main', 'categoryName');
-	const mainItem = sourceMap.categories[mainIndex];
-	sourceMap.categories.splice(mainIndex, 1);
-	sourceMap.categories.unshift(mainItem);
 	const jsonMap = `window.docMap = ${JSON.stringify(sourceMap)}`;
 	writeFile(`${destination}acid.js`, readFile('./node_modules/Acid/index.js'));
 	writeFile(`${destination}${filename}.js`, jsonMap);
