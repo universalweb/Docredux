@@ -1,7 +1,6 @@
-const lucy = require('Lucy');
-const docredux = async () => {};
-const {
-	assignDeep
-} = lucy;
-assignDeep(docredux, require(`./json.js`));
-module.exports = docredux;
+import { buildJson } from './json.js';
+function docredux(...args) {
+	return buildJson(...args);
+}
+export { buildJson };
+export default docredux;

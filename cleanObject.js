@@ -1,15 +1,13 @@
-const {
-	stringify,
-} = require('comment-parser');
-const {
+import { stringify } from 'comment-parser';
+import {
 	isArray,
 	compactMapObject,
 	hasValue,
 	omit,
 	isEmpty,
 	isString
-} = require(`Lucy`);
-module.exports = (cleanThisArg, cleanTag) => {
+} from 'Acid';
+function cleanObject(cleanThisArg, cleanTag) {
 	if (cleanTag && cleanThisArg.source) {
 		const cleanThis = cleanThisArg.source;
 		if (isArray(cleanThis)) {
@@ -33,4 +31,5 @@ module.exports = (cleanThisArg, cleanTag) => {
 		});
 	}
 	return cleanThisArg;
-};
+}
+export default cleanObject;

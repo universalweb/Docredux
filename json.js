@@ -1,15 +1,12 @@
-const lucy = require(`Lucy`);
-const {
+import {
 	findItem,
 	eachObject,
 	sortAlphabetical,
-} = lucy;
-const format = require('prettier-eslint');
-const fs = require(`fs`);
-const {
-	parse
-} = require('comment-parser');
-const cleanObject = require('./cleanObject');
+} from 'Acid';
+import format from 'prettier-eslint';
+import fs from 'fs';
+import { parse } from 'comment-parser';
+import cleanObject from './cleanObject.js';
 const regexComments = /(\/\*([\s\S]*?)\*\/)/gm;
 const readFile = (filePath) => {
 	return fs.readFileSync(filePath).toString();
@@ -17,12 +14,12 @@ const readFile = (filePath) => {
 const writeFile = (fileLocation, fileData) => {
 	return fs.writeFileSync(`${fileLocation}`, fileData, 'utf8');
 };
-const syntax = require('./syntax');
-const buildJson = async ({
+import syntax from './syntax.js';
+async function buildJson({
 	source,
 	destination,
 	filename = 'sourceMap'
-}) => {
+}) {
 	const fileData = readFile(source);
 	const matches = fileData.match(regexComments);
 	const sourceMap = {
@@ -100,9 +97,6 @@ const buildJson = async ({
 	});
 	sourceMap.categories = sortAlphabetical(categoriesSorted, 'categoryName');
 	const jsonMap = `window.docMap = ${JSON.stringify(sourceMap)}`;
-	writeFile(`${destination}acid.js`, readFile('./node_modules/Acid/index.js'));
 	writeFile(`${destination}${filename}.js`, jsonMap);
-};
-exports.build = {
-	json: buildJson
-};
+}
+export { buildJson };
