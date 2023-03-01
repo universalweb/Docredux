@@ -2,6 +2,7 @@ import {
 	findItem,
 	eachObject,
 	sortAlphabetical,
+	eachAsyncArray
 } from 'Acid';
 import format from 'prettier-eslint';
 import fs from 'fs';
@@ -26,7 +27,7 @@ async function buildJson({
 		categories: {},
 		items: {}
 	};
-	matches.forEach((item) => {
+	await eachAsyncArray(matches, async (item) => {
 		if (item.includes('@ignore')) {
 			return;
 		}
@@ -61,16 +62,16 @@ async function buildJson({
 			name: commentName,
 			params: [],
 		};
-		syntax.forEach((tagName) => {
+		await eachAsyncArray(syntax, async (tagName) => {
 			const tagItem = findItem(comment, tagName, 'tag');
 			if (tagItem) {
 				sourceMap.items[commentName][tagName] = cleanObject(tagItem, tagName);
 			}
 		});
-		comment.forEach((commentTag) => {
+		await eachAsyncArray(comment, async (commentTag) => {
 			if (commentTag.tag === 'example') {
 				const exampleCode = cleanObject(commentTag, 'example');
-				exampleCode.source = format({
+				exampleCode.source = await format({
 					prettierOptions: {
 						parser: 'babel',
 					},
@@ -79,7 +80,7 @@ async function buildJson({
 				sourceMap.items[commentName].examples.push(exampleCode);
 			}
 		});
-		comment.forEach((commentTag) => {
+		await eachAsyncArray(comment, async (commentTag) => {
 			if (commentTag.tag === 'param') {
 				sourceMap.items[commentName].params.push(cleanObject(commentTag, 'param'));
 			}
