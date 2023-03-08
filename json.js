@@ -38,30 +38,49 @@ async function buildJson({
 			return;
 		}
 		const functionTag = findItem(comment, 'function', 'tag');
-		if (!functionTag) {
+		const classTag = findItem(comment, 'class', 'tag');
+		let nameTag = functionTag;
+		if (classTag && functionTag) {
+			nameTag = `${classTag.name}.${functionTag.name}`;
+		} else if (classTag) {
+			nameTag = classTag;
+		}
+		if (!nameTag) {
 			return;
 		}
-		let categoryName;
-		const commentName = functionTag.name;
+		let category;
+		const commentName = nameTag.name || nameTag;
 		const categoryTag = findItem(comment, 'category', 'tag');
 		if (categoryTag) {
-			categoryName = categoryTag.name;
-			if (categoryName) {
-				categoryName = categoryName.trim().toLowerCase();
-				if (!sourceMap.categories[categoryName]) {
-					sourceMap.categories[categoryName] = [];
+			category = categoryTag.name;
+			if (category) {
+				category = category.trim().toLowerCase();
+				if (!sourceMap.categories[category]) {
+					sourceMap.categories[category] = [];
 				}
-				sourceMap.categories[categoryName].push(commentName);
+				sourceMap.categories[category].push(commentName);
 			}
 		}
+		const type = findItem(comment, 'class', 'tag');
+		const isAsync = findItem(comment, 'async', 'tag');
 		sourceMap.items[commentName] = {
-			categoryName,
+			category,
 			code: '',
 			description,
 			examples: [],
 			name: commentName,
 			params: [],
+			type: type || (classTag && functionTag) ? 'class' : 'function'
 		};
+		if (isAsync) {
+			sourceMap.items[commentName].isAsync = true;
+		}
+		if (classTag) {
+			sourceMap.items[commentName].classTag = classTag.name;
+		}
+		if (functionTag) {
+			sourceMap.items[commentName].functionTag = functionTag.name;
+		}
 		await eachAsyncArray(syntax, async (tagName) => {
 			const tagItem = findItem(comment, tagName, 'tag');
 			if (tagItem) {
@@ -88,15 +107,15 @@ async function buildJson({
 		sourceMap.items[commentName] = cleanObject(sourceMap.items[commentName]);
 	});
 	const categoriesSorted = [];
-	eachObject(sourceMap.categories, (catItem, categoryName) => {
-		if (categoryName) {
+	eachObject(sourceMap.categories, (catItem, title) => {
+		if (title) {
 			categoriesSorted.push({
-				categoryName,
+				title,
 				items: catItem.sort(),
 			});
 		}
 	});
-	sourceMap.categories = sortAlphabetical(categoriesSorted, 'categoryName');
+	sourceMap.categories = sortAlphabetical(categoriesSorted, 'title');
 	const jsonMap = `window.docMap = ${JSON.stringify(sourceMap)}`;
 	writeFile(`${destination}${filename}.js`, jsonMap);
 }
