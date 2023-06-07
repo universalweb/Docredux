@@ -18,7 +18,7 @@
         "Universal Web"
     ],
     "dependencies": {
-        "Acid": "github:universalweb/Acid",
+        "Acid": "^3.0.30",
         "comment-parser": "*",
         "eslint": "*",
         "eslint-plugin-jsdoc": "*",
@@ -28,10 +28,7 @@
         "email": "info@universalweb.io",
         "name": "universalweb"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/universalweb/docredux.git"
-    },
+    "repository": "https://github.com/universalweb/docredux",
     "publishConfig": {
         "access": "public"
     },
