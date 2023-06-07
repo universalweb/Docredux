@@ -32,6 +32,9 @@
         "type": "git",
         "url": "git+https://github.com/universalweb/docredux.git"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "*",
