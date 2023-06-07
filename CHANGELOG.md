@@ -5,7 +5,11 @@
 </pre>
 ---
 
-### [v3.2.2](https://github.com/universalweb/docredux/compare/v3.2.2...v3.2.2) 
+### [v3.2.3](https://github.com/universalweb/docredux/compare/v3.2.3...v3.2.3) 
+DATE: 2023-06-07
+
+---
+### [v3.2.3](https://github.com/universalweb/docredux/compare/v3.2.2...v3.2.3) 
 DATE: 2023-06-07
 
 ---

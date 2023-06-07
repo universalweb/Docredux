@@ -15,7 +15,7 @@ const readFile = (filePath) => {
 const writeFile = (fileLocation, fileData) => {
 	return fs.writeFileSync(`${fileLocation}`, fileData, 'utf8');
 };
-import syntax from './syntax.js';
+import { validTags } from './validTags.js';
 async function buildJson({
 	source,
 	destination,
@@ -81,7 +81,7 @@ async function buildJson({
 		if (functionTag) {
 			sourceMap.items[commentName].functionTag = functionTag.name;
 		}
-		await eachAsyncArray(syntax, async (tagName) => {
+		await eachAsyncArray(validTags, async (tagName) => {
 			const tagItem = findItem(comment, tagName, 'tag');
 			if (tagItem) {
 				sourceMap.items[commentName][tagName] = cleanObject(tagItem, tagName);
