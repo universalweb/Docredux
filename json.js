@@ -1,7 +1,7 @@
 import {
 	findItem,
 	eachObject,
-	sortAlphabetical,
+	sortCollectionAlphabetically,
 	eachAsyncArray
 } from 'Acid';
 import format from 'prettier-eslint';
@@ -115,7 +115,7 @@ async function buildJson({
 			});
 		}
 	});
-	sourceMap.categories = sortAlphabetical(categoriesSorted, 'title');
+	sourceMap.categories = sortCollectionAlphabetically(categoriesSorted, 'title');
 	const jsonMap = `window.docMap = ${JSON.stringify(sourceMap)}`;
 	writeFile(`${destination}${filename}.js`, jsonMap);
 }
