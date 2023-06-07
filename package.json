@@ -3,12 +3,17 @@
     "type": "module",
     "company": "Universal Web",
     "homepage": "https://universalweb.io",
-    "version": "3.1.0",
+    "version": "3.2.1",
     "description": "Dead simple documentation generator for JSDOC syntax.",
     "main": "index.js",
     "readme": "README.md",
     "scripts": {
-        "build": "node build.js"
+        "build": "node build.js",
+        "buildProduction": "production=true node index.js",
+        "changelog": "npx auto-changelog -p --sort-commits date-desc && git add CHANGELOG.md",
+        "bumpVersion": "npm version patch --force && cd ./source/ && npm version patch --force",
+        "puball": "npm publish ./npm/ && cd ./github/ && npm publish && cd ../",
+        "pubit": "npm run bumpVersion && npm run changelog && npm run puball"
     },
     "keywords": [
         "docs",
@@ -18,7 +23,8 @@
         "Universal Web"
     ],
     "dependencies": {
-        "Acid": "^3.0.30",
+        "@universalweb/acid": "^3.0.38",
+        "auto-changelog": "^2.4.0",
         "comment-parser": "*",
         "eslint": "*",
         "eslint-plugin-jsdoc": "*",
@@ -27,6 +33,12 @@
     "author": {
         "email": "info@universalweb.io",
         "name": "universalweb"
+    },
+    "auto-changelog": {
+        "commitLimit": false,
+        "output": "CHANGELOG.md",
+        "template": "./maintenance/keepachangelog.hbs",
+        "unreleased": true
     },
     "repository": "https://github.com/universalweb/docredux",
     "publishConfig": {
