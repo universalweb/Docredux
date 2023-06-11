@@ -5,8 +5,16 @@
 </pre>
 ---
 
-### [v3.2.3](https://github.com/universalweb/docredux/compare/v3.2.3...v3.2.3) 
-DATE: 2023-06-07
+### [v3.2.4](https://github.com/universalweb/docredux/compare/v3.2.4...v3.2.4) 
+DATE: 2023-06-11
+
+---
+### [v3.2.4](https://github.com/universalweb/docredux/compare/v3.2.3...v3.2.4) 
+DATE: 2023-06-10
+
+### Commits
+
+- new build and publish system [`433a8f5`](https://github.com/universalweb/docredux/commit/433a8f5ce0c534f0181fd8c00e357e2e73d7e3cb)
 
 ---
 ### [v3.2.3](https://github.com/universalweb/docredux/compare/v3.2.2...v3.2.3) 
