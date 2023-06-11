@@ -3,7 +3,7 @@
     "type": "module",
     "company": "Universal Web",
     "homepage": "https://universalweb.io",
-    "version": "3.2.2",
+    "version": "3.2.5",
     "description": "Dead simple JSON documentation generator for JSDOC syntax.",
     "main": "index.js",
     "readme": "README.md",

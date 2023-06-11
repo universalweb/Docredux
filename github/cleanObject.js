@@ -6,7 +6,7 @@ import {
 	omit,
 	isEmpty,
 	isString
-} from 'Acid';
+} from '@universalweb/acid';
 function cleanObject(cleanThisArg, cleanTag) {
 	if (cleanTag && cleanThisArg.source) {
 		const cleanThis = cleanThisArg.source;

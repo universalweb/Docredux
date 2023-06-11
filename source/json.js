@@ -3,7 +3,7 @@ import {
 	eachObject,
 	sortCollectionAlphabetically,
 	eachAsyncArray
-} from 'Acid';
+} from '@universalweb/acid';
 import format from 'prettier-eslint';
 import fs from 'fs';
 import { parse } from 'comment-parser';
