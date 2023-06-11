@@ -5,8 +5,16 @@
 </pre>
 ---
 
-### [v3.2.5](https://github.com/universalweb/docredux/compare/v3.2.5...v3.2.5) 
+### [v3.2.6](https://github.com/universalweb/docredux/compare/v3.2.6...v3.2.6) 
 DATE: 2023-06-11
+
+---
+### [v3.2.6](https://github.com/universalweb/docredux/compare/v3.2.5...v3.2.6) 
+DATE: 2023-06-11
+
+### Commits
+
+- Acid name swap to new name [`b49558b`](https://github.com/universalweb/docredux/commit/b49558b719654700d80659d38a4723d79dd7d561)
 
 ---
 ### [v3.2.5](https://github.com/universalweb/docredux/compare/v3.2.4...v3.2.5) 
