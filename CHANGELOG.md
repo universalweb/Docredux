@@ -5,8 +5,16 @@
 </pre>
 ---
 
-### [v3.2.6](https://github.com/universalweb/docredux/compare/v3.2.6...v3.2.6) 
-DATE: 2023-06-11
+### [v3.2.7](https://github.com/universalweb/docredux/compare/v3.2.7...v3.2.7) 
+DATE: 2023-07-30
+
+---
+### [v3.2.7](https://github.com/universalweb/docredux/compare/v3.2.6...v3.2.7) 
+DATE: 2023-07-30
+
+### Commits
+
+- dep updates [`4eb7cd9`](https://github.com/universalweb/docredux/commit/4eb7cd96e9200b57e35df44532487ba77d4ce23b)
 
 ---
 ### [v3.2.6](https://github.com/universalweb/docredux/compare/v3.2.5...v3.2.6) 
