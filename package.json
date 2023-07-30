@@ -3,7 +3,7 @@
     "type": "module",
     "company": "Universal Web",
     "homepage": "https://universalweb.io",
-    "version": "3.2.6",
+    "version": "3.2.7",
     "description": "Dead simple documentation generator for JSDOC syntax.",
     "main": "index.js",
     "readme": "README.md",
@@ -12,8 +12,8 @@
         "buildProduction": "production=true node index.js",
         "changelog": "npx auto-changelog -p --sort-commits date-desc && git add CHANGELOG.md",
         "bumpVersion": "npm version patch --force && cd ./source/ && npm version patch --force",
-        "puball": "npm publish ./npm/ && cd ./github/ && npm publish && cd ../",
-        "pubit": "npm run bumpVersion && npm run changelog && npm run buildProduction && npm run puball"
+        "publishAll": "npm publish ./npm/ && cd ./github/ && npm publish && cd ../",
+        "publish": "npm run bumpVersion && npm run changelog && npm run buildProduction && npm run publishAll"
     },
     "keywords": [
         "docs",
